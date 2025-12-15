@@ -1,3 +1,220 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .game-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .game-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .game-card:hover .card-overlay {
+            opacity: 1;
+        }
+        
+        .game-card:hover .game-title {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .game-image {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .card-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body class="bg-neutral-50 min-h-screen">
+    
+    <!-- Header Section -->
+    <header class="pt-16 pb-8 px-6">
+        <div class="max-w-6xl mx-auto">
+            <p class="text-neutral-400 text-sm font-medium tracking-widest uppercase mb-4">Select your game</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-neutral-900 tracking-tight leading-none">
+                Choose a game
+            </h1>
+            <div class="mt-6 w-24 h-1 bg-neutral-900"></div>
+        </div>
+    </header>
 
+    <!-- Games Grid -->
+    <main class="px-6 py-12">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- Category Tags -->
+            <div class="flex flex-wrap gap-4 mb-12">
+                <span class="text-xs font-bold tracking-widest uppercase text-neutral-900 border-b-2 border-neutral-900 pb-1">ALL GAMES</span>
+                <span class="text-xs font-medium tracking-widest uppercase text-neutral-400 hover:text-neutral-900 cursor-pointer transition-colors">CASINO</span>
+                <span class="text-xs font-medium tracking-widest uppercase text-neutral-400 hover:text-neutral-900 cursor-pointer transition-colors">ARCADE</span>
+                <span class="text-xs font-medium tracking-widest uppercase text-neutral-400 hover:text-neutral-900 cursor-pointer transition-colors">STRATEGY</span>
+            </div>
+
+            <!-- Games Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Game 1: Avia -->
+                <a href="https://lkbb.cc/12a6e5ed" class="game-card block group">
+                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-400 via-red-500 to-pink-500 shadow-lg">
+                        <img 
+                            src="avia.png" 
+                            alt="Avia Game" 
+                            class="game-image w-full"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="hidden aspect-square w-full items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">✈️</div>
+                                <div class="text-2xl font-bold">AVIA</div>
+                            </div>
+                        </div>
+                        <div class="card-overlay absolute inset-0 bg-black/20 opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="mt-4 flex items-start justify-between">
+                        <div>
+                            <span class="card-number text-neutral-400 font-semibold">01</span>
+                            <h3 class="text-xl font-bold text-neutral-900 mt-1">AVIA</h3>
+                            <p class="text-sm text-neutral-500 mt-1">Crash game</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center group-hover:bg-neutral-700 transition-colors">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Game 2: Mines -->
+                <a href="https://lkjz.cc/cb75" class="game-card block group">
+                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 shadow-lg">
+                        <img 
+                            src="mines.png" 
+                            alt="Mines Game" 
+                            class="game-image w-full"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="hidden aspect-square w-full items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">💎</div>
+                                <div class="text-2xl font-bold">MINES</div>
+                            </div>
+                        </div>
+                        <div class="card-overlay absolute inset-0 bg-black/20 opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="mt-4 flex items-start justify-between">
+                        <div>
+                            <span class="card-number text-neutral-400 font-semibold">02</span>
+                            <h3 class="text-xl font-bold text-neutral-900 mt-1">MINES</h3>
+                            <p class="text-sm text-neutral-500 mt-1">Strategy game</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center group-hover:bg-neutral-700 transition-colors">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Game 3: Tower -->
+                <a href="https://lkjz.cc/cb75" class="game-card block group">
+                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-violet-400 via-purple-500 to-indigo-600 shadow-lg">
+                        <img 
+                            src="tower.png" 
+                            alt="Tower Game" 
+                            class="game-image w-full"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="hidden aspect-square w-full items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🏰</div>
+                                <div class="text-2xl font-bold">TOWER</div>
+                            </div>
+                        </div>
+                        <div class="card-overlay absolute inset-0 bg-black/20 opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="mt-4 flex items-start justify-between">
+                        <div>
+                            <span class="card-number text-neutral-400 font-semibold">03</span>
+                            <h3 class="text-xl font-bold text-neutral-900 mt-1">TOWER</h3>
+                            <p class="text-sm text-neutral-500 mt-1">Arcade game</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center group-hover:bg-neutral-700 transition-colors">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Game 4: Ninja -->
+                <a href="https://lkjz.cc/cb75" class="game-card block group">
+                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 shadow-lg">
+                        <img 
+                            src="ninja.png" 
+                            alt="Ninja Game" 
+                            class="game-image w-full"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="hidden aspect-square w-full items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🥷</div>
+                                <div class="text-2xl font-bold">NINJA</div>
+                            </div>
+                        </div>
+                        <div class="card-overlay absolute inset-0 bg-black/20 opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="mt-4 flex items-start justify-between">
+                        <div>
+                            <span class="card-number text-neutral-400 font-semibold">04</span>
+                            <h3 class="text-xl font-bold text-neutral-900 mt-1">NINJA</h3>
+                            <p class="text-sm text-neutral-500 mt-1">Action game</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center group-hover:bg-neutral-700 transition-colors">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-16 flex items-center justify-between border-t border-neutral-200 pt-8">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl font-black text-neutral-900">01</span>
+                    <span class="text-neutral-300">—</span>
+                    <span class="text-2xl font-black text-neutral-300">04</span>
+                </div>
+                <div class="text-sm font-semibold text-neutral-500 tracking-widest uppercase">
+                    4 Games Available
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="px-6 py-8 mt-8">
+        <div class="max-w-6xl mx-auto border-t border-neutral-200 pt-8">
+            <p class="text-xs text-neutral-400 tracking-wider uppercase">© 2024 — Play responsibly</p>
+        </div>
+    </footer>
+
+</body>
 </html>
